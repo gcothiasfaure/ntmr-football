@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football simulation</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="./assets/favicon/foot.png" type="image/x-icon">
+</head>
+<body>
+
+    <div id="info">
+        <div id="app">
+            <a @click.prevent="audio.isPlaying ? pause(audio) : play(audio)" v-for="audio in audios" :key="audio.id">
+              {{ audio.isPlaying ? 'Stop' : 'Play' }} {{ audio.name }}
+            </a>
+            <br>
+            <p>Entraînement au tir à ras de terre.</p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="./lib/ammo.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
